@@ -6,10 +6,17 @@
 </head>
 <body>
 
+<!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
 {{range .}}
 
-<!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
-
+{{.AcaYear}}
+{{.Fall.Term}}
+{{range $i, $course := .Fall.Courses}}
+Index: {{ $i }}
+{{$course.Number}}
+{{$course.Name}}
+{{$course.Units}}
+{{end}}
 {{end}}
 
 </body>
