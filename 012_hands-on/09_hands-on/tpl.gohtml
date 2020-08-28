@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body
+<table>
+{{ range $index, $record := .}}
+{{ if eq $index 0 }} <tr> <th>{{ index $record 0 }}</th> <th>{{ index $record 1 }}</th> </tr> 
+{{else}} <tr> <td>{{ index $record 0 }}</td> <td>{{ index $record 1 }}</td> </tr> {{end}} 
+{{ end }}
+</table>
+</body>
+</html>
