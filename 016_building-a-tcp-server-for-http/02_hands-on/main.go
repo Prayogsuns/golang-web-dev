@@ -33,7 +33,7 @@ func handleConnection(conn net.Conn) {
 	for scanner.Scan() {
 		ln := scanner.Text()
 		fmt.Println(ln)
-		if ln[0:3] == "GET" {
+		if strings.Fields(ln)[0] == "GET" {
 			urlP:= strings.Fields(ln)[1]
 			fmt.Fprintf(conn, "%s\r\n", conn.LocalAddr().String()+urlP)
 		}
