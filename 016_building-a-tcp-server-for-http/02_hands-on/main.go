@@ -34,9 +34,8 @@ func handleConnection(conn net.Conn) {
 		ln := scanner.Text()
 		fmt.Println(ln)
 		if ln[0:3] == "GET" {
-			urlP := strings.Split(ln, " ")
-			urlStr := strings.Join(urlP[1:len(urlP)-1], " ")
-			fmt.Fprintf(conn, "%s\n", conn.LocalAddr().String()+urlStr)
+			urlP:= strings.Fields(ln)[1]
+			fmt.Fprintf(conn, "%s\r\n", conn.LocalAddr().String()+urlP)
 		}
 		break
 	}
