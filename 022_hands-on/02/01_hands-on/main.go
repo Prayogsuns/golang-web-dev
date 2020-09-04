@@ -20,6 +20,7 @@ func main() {
 		conn, err := li.Accept()
 		if err != nil {
 			fmt.Println("Connection error on Accept: ", err)
+			continue
 		}
 
 		io.WriteString(conn, "Hello world!\n")
